@@ -24,3 +24,4 @@ export default FeedbackItem
 
 // const [rating, setRating] = useState(7)
 // const handle = () => setRating(prev => { return prev + 1 })
+
