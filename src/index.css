@@ -22,6 +22,7 @@ ul {
     max-width: 768px;
     margin: auto;
     padding: 0 20px;
+    position: relative;
 }
 
 header {
@@ -190,7 +191,9 @@ input:focus {
  * document */
 .about-link {
     display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    top: 83vh;
+    right: -4rem;
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
@@ -210,6 +213,16 @@ input:focus {
 
 .about p {
     margin: 10px 0;
+}
+
+@media (max-width: 1000px) {
+    .about-link {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        top: 0;
+        right: 0;
+    }
 }
 
 @media (max-width: 600px) {
