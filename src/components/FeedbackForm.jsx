@@ -32,7 +32,6 @@ function FeedbackForm({ handleAdd }) {
             }
             handleAdd(newFeedback)
 
-            // setRating(10)
             setBtnDisabled(true)
             setText('');
         }
