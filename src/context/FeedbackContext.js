@@ -21,7 +21,7 @@ export const FeedbackProvider = ({ children }) => {
             rating: 5
         },
     ])
-
+    // feedbackEdit
     const [feedbackEdit, setFeedbackEdit] = useState({
         item: {},
         edit: false
@@ -29,7 +29,6 @@ export const FeedbackProvider = ({ children }) => {
 
     const addFeedback = (newFeedback) => {
         newFeedback.id = uuidv4()
-        console.log(newFeedback)
         setFeedback([newFeedback, ...feedback])
     }
 
@@ -37,6 +36,14 @@ export const FeedbackProvider = ({ children }) => {
         if (window.confirm('Are you sure you want to delete?')) {
             setFeedback(feedback.filter(item => item.id !== id))
         }
+    }
+
+    // Update feedback item
+    const updateFeedback = (id, updItem) => {
+        setFeedback(
+            feedback.map((item) =>
+                (item.id === id ? { ...item, ...updItem } : item)
+            ))
     }
 
     // Set item to be updated
@@ -49,10 +56,11 @@ export const FeedbackProvider = ({ children }) => {
 
     return <FeedbackContext.Provider value={{
         feedback,
+        feedbackEdit,
         deleteFeedback,
         addFeedback,
         editFeedback,
-        feedbackEdit,
+        updateFeedback,
     }}>
         {children}
     </FeedbackContext.Provider>
