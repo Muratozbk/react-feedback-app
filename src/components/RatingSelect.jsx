@@ -55,17 +55,6 @@ function RatingSelect({ select }) {
         //         />
         //         <label htmlFor="num2">2</label>
         //     </li>
-        //     <li>
-        //         <input
-        //             type="radio"
-        //             id='num3'
-        //             name="rating"
-        //             value='3'
-        //             onChange={handleChange}
-        //             checked={selected === 3}
-        //         />
-        //         <label htmlFor="num3">3</label>
-        //     </li>
         // </ul>
     )
 }
