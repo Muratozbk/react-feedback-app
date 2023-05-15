@@ -22,14 +22,16 @@ function FeedbackForm() {
     }, [feedbackEdit])
 
     const handleTextChange = e => {
-        if (text === '') {
+        if (text.length === '') {
             setBtnDisabled(true)
             setMessage(null)
         } else if (text !== '' && text.trim().length <= 10) {
             setMessage('Text must be at least 10 characters')
+            setBtnDisabled(true)
+            console.log(123)
         } else {
-            setBtnDisabled(false)
             setMessage(null)
+            setBtnDisabled(false)
         }
         setText(e.target.value)
     }
